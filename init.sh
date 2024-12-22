@@ -11,7 +11,7 @@ set -e
 source "${toolpath}/config.sh"
 
 # Install Requirements
-apt-get install acpica-tools
+apt-get install acpica-tools bc
 
 # Create Folder if not existing yet
 mkdir -p "${acpi_working_folder}"
