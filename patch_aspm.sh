@@ -13,9 +13,8 @@ source "${toolpath}/config.sh"
 # Load Common Scripts
 source "${toolpath}/init.sh"
 
-# Extract the Machine ACPI Tables
-# acpidump >acpidump
-# acpixtract -a acpidump
+# Change to Working Folder
+cd "${acpi_working_folder}" || exit
 
 # Disassemble the ACPI Tables
 iasl -d facp.dat

@@ -13,10 +13,6 @@ source "${toolpath}/config.sh"
 # Load Common Script
 source "${toolpath}/init.sh"
 
-# Extract the Machine ACPI Tables
-# acpidump >acpidump
-# acpixtract -a acpidump
-
 # Execute Single Scripts
 if [[ "${enable_aspm_patch}" == "yes" ]]
 then
@@ -46,12 +42,12 @@ echo 'GRUB_CMDLINE_LINUX_DEFAULT="${GRUB_CMDLINE_LINUX_DEFAULT} acpi.debug_level
 # Update GRUB
 update-grub
 
-# Update Initramfs
-update-initramfs -k all -u
+# Update Initramfs (probably not required)
+# update-initramfs -k all -u
 
 # Update GRUB (once more)
 update-grub
 
-# Update Initramfs (once more)
-update-initramfs -k all -u
+# Update Initramfs (once more, probably not required)
+# update-initramfs -k all -u
 
