@@ -37,11 +37,11 @@ mkdir -p kernel/firmware/acpi
 find kernel | cpio -H newc --create > /boot/initrd_acpi_patched
 
 # Create GRUB Configuration
-echo 'GRUB_EARLY_INITRD_LINUX_CUSTOM="initrd_acpi_patched"' > /etc/default/grub.d/initramfs-acpi-tables.cfg
+echo 'GRUB_EARLY_INITRD_LINUX_CUSTOM="initrd_acpi_patched"' > /etc/default/grub.d/acpi-tables.cfg
 
 # (Optional) Increase ACPI Debug Level
-echo 'GRUB_CMDLINE_LINUX="${GRUB_CMDLINE_LINUX} acpi.debug_level=0x2 acpi.debug_layer=0xFFFFFFFF"' >> /etc/default/grub.d/initramfs-acpi-tables.cfg
-echo 'GRUB_CMDLINE_LINUX_DEFAULT="${GRUB_CMDLINE_LINUX_DEFAULT} acpi.debug_level=0x2 acpi.debug_layer=0xFFFFFFFF"' >> /etc/default/grub.d/initramfs-acpi-tables.cfg
+echo 'GRUB_CMDLINE_LINUX="${GRUB_CMDLINE_LINUX} acpi.debug_level=0x2 acpi.debug_layer=0xFFFFFFFF"' >> /etc/default/grub.d/acpi-tables.cfg
+echo 'GRUB_CMDLINE_LINUX_DEFAULT="${GRUB_CMDLINE_LINUX_DEFAULT} acpi.debug_level=0x2 acpi.debug_layer=0xFFFFFFFF"' >> /etc/default/grub.d/acpi-tables.cfg
 
 # Update GRUB
 update-grub
