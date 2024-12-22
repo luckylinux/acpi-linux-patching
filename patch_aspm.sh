@@ -32,20 +32,5 @@ sed -Ei "s|^(.*?)Oem Revision(\s*?):(\s*?)([0-9]+)$|\1Oem Revision\2:\3${new_oem
 # Force ASPM to be Enabled
 sed -Ei "s|(\s*?)PCIe ASPM Not Supported \(V4\) : 1|\1PCIe ASPM Not Supported \(V4\) : 0|" "facp.dsl"
 
-# Add the raw ACPI tables to an uncompressed cpio archive.
-# They must be put into a /kernel/firmware/acpi directory inside the cpio
-# archive. Note that if the table put here matches a platform table
-# (similar Table Signature, and similar OEMID, and similar OEM Table ID)
-# with a more recent OEM Revision, the platform table will be upgraded by
-# this table. If the table put here doesn't match a platform table
-# (dissimilar Table Signature, or dissimilar OEMID, or dissimilar OEM Table
-# ID), this table will be appended.
-mkdir -p kernel/firmware/acpi
-
-
-
-find kernel | cpio -H newc --create > /boot
-
-
 # Change Working Directory back to where we were
 cd "${toolpath}" || exit
