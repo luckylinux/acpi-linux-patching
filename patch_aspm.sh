@@ -38,4 +38,4 @@ iasl -sa facp.dsl
 cp facp.aml kernel/firmware/acpi/
 
 # Change Working Directory back to where we were
-cd "${toolpath}" || exit
+# cd "${toolpath}" || exit

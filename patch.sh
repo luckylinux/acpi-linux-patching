@@ -19,6 +19,9 @@ then
     source "${toolpath}/patch_aspm.sh"
 fi
 
+# Change to Working Folder
+cd "${acpi_working_folder}" || exit
+
 # Add the raw ACPI tables to an uncompressed cpio archive.
 # They must be put into a /kernel/firmware/acpi directory inside the cpio
 # archive. Note that if the table put here matches a platform table
@@ -51,3 +54,5 @@ update-grub
 # Update Initramfs (once more, probably not required)
 # update-initramfs -k all -u
 
+# Change Working Directory back to where we were
+# cd "${toolpath}" || exit
