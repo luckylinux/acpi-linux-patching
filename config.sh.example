@@ -9,3 +9,6 @@ acpi_working_folder="/usr/src/acpi"
 
 # What Modules to enable
 enable_aspm_patch="yes"
+
+# Disassemble all Modules
+disassemble_all="yes"
