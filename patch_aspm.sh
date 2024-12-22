@@ -32,5 +32,11 @@ sed -Ei "s|^(.*?)Oem Revision(\s*?):(\s*?)([0-9]+)$|\1Oem Revision\2:\3${new_oem
 # Force ASPM to be Enabled
 sed -Ei "s|(\s*?)PCIe ASPM Not Supported \(V4\) : 1|\1PCIe ASPM Not Supported \(V4\) : 0|" "facp.dsl"
 
+# Assemble the new ACPI Tables
+iasl -sa facp.dsl
+
+# Copy it to the build Folder for the new uncompressed CPIO Archive
+cp facp.aml kernel/firmware/acpi/
+
 # Change Working Directory back to where we were
 cd "${toolpath}" || exit

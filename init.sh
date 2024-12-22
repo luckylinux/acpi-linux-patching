@@ -14,10 +14,13 @@ source "${toolpath}/config.sh"
 apt-get install acpica-tools
 
 # Create Folder if not existing yet
-mkdir -p "${workingfolder}"
+mkdir -p "${acpi_working_folder}"
 
 # Change Current Working Directory
-cd "${workingfolder}" || exit
+cd "${acpi_working_folder}" || exit
+
+# Create Folder Structure to later generate uncompressed CPIO Archive
+mkdir -p kernel/firmware/acpi
 
 # Extract the Machine ACPI Tables
 acpidump >acpidump

@@ -5,7 +5,7 @@ relativepath="./" # Define relative path to go from this script to the root leve
 if [[ ! -v toolpath ]]; then scriptpath=$(cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd ); toolpath=$(realpath --canonicalize-missing $scriptpath/$relativepath); fi
 
 # Define Temporary Folder for ACPI Tables
-workingfolder="/usr/src/acpi"
+acpi_working_folder="/usr/src/acpi"
 
 # What Modules to enable
 enable_aspm_patch="yes"
