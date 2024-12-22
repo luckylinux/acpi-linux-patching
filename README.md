@@ -1,6 +1,11 @@
 # acpi-linux-patching
 Some Scripts to Patch ACPI Issues (mainly FADT for ASPM Support)
 
+# Important
+Note that, if you change something in BIOS **AFTER** you setup these Custom ACPI Tables, you might experience Boot Failure / Boot Hanging at around 0s with an ACPI Message.
+
+To bypass this, in GRUB2, press `e`, go to the `initrd` Line, remove the offending `/initrd_acpi_patched` on that Line (make sure to leave the "Real" InitramFS Image !), then press `F10` to Continue.
+
 # Setup
 Clone Repository:
 ```
