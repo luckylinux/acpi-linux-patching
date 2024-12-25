@@ -1,6 +1,11 @@
 # acpi-linux-patching
 Some Scripts to Patch ACPI Issues (mainly FADT for ASPM Support)
 
+This is needed in case you get a Message like this in `dmesg`:
+```
+ACPI FADT declares the system doesn't support PCIe ASPM, so disable
+```
+
 # Important
 Note that, if you change something in BIOS **AFTER** you setup these Custom ACPI Tables, you might experience Boot Failure / Boot Hanging at around 0s with an ACPI Message.
 
