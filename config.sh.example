@@ -12,3 +12,6 @@ enable_aspm_patch="yes"
 
 # Disassemble all Modules
 disassemble_all="yes"
+
+# Update /etc/default/grub.d/acpi-tables.cfg
+update_grub_config="yes"
